@@ -1,0 +1,8 @@
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        both = set(nums1)&set(nums2)
+        intersect = []
+        for n in both:
+            num = min(nums1.count(n),nums2.count(n))
+            intersect += [n]*num
+        return intersect
