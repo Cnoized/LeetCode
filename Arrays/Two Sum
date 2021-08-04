@@ -1,0 +1,9 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for n in nums:
+            if nums.count(target-n) >= 1 and n != target-n:
+                return [nums.index(n),nums.index(target-n)]
+            elif nums.count(target-n)>1:
+                a = nums.index(n)
+                nums.pop(a)
+                return [nums.index(n)+1,a]
