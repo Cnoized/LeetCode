@@ -1,0 +1,15 @@
+import numpy as np
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        i = 0
+        m = 0
+        nums.append(0)
+        for n in range(len(nums)):
+            if nums[n] == 1:
+                i+=1
+            else:
+                if i > m:
+                    m = i
+                i = 0
+                    
+        return m
